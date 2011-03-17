@@ -168,7 +168,15 @@ table {
 
 /* BEGIN CLASSES */
 
+.right { float: right; }
 
+.left { float: left; }
+
+.clear { clear: both; }
+
+.italic { font-style: italic; }
+
+.roman {font-style: normal; }
 
 /* END CLASSES */
 

@@ -1,1 +1,3 @@
-// jQuery
+<script type="text/javascript">
+
+</script>
