@@ -12,6 +12,28 @@ http://peterbehr.net
 * Clean up resets
 * Make default classes
 
+* rough table of contents
+* fix property/selector pairs separated by a colon without a space
+* fix url() statements
+* comment
+
+
+
+BEGIN notes
+
+display
+positioning
+width
+height
+padding
+border
+margin
+background
+color
+type related
+
+END notes
+
 ***/
 
 
@@ -35,60 +57,44 @@ table {
     border-spacing:0;
 }
 
-fieldset,img {
-    border:0;
-}
+fieldset,img { border:0; }
 
 address,caption,cite,code,dfn,em,strong,th,var {
     font-style:normal;
     font-weight:normal;
 }
 
-li {
-    list-style:none;
-}
+li { list-style:none; }
 
-caption,th {
-    text-align:left;
-}
+caption, th { text-align:left; }
 
-h1,h2,h3,h4,h5,h6 {
+h1, h2, h3, h4, h5, h6 {
     font-size:100%;
     font-weight:normal;
 }
 
-q:before,q:after {
-    content:'';
-}
+q:before, q:after { content:''; }
 
-abbr,acronym {
+abbr, acronym {
     border:0;
     font-variant:normal;
 }
 
-sup {
-    vertical-align:text-top;
-}
+sup { vertical-align:text-top; }
 
-sub {
-    vertical-align:text-bottom;
-}
+sub { vertical-align:text-bottom; }
 
-input,textarea,select {
+input, textarea, select {
     font-family:inherit;
     font-size:inherit;
     font-weight:inherit;
 }
 
-input,textarea,select {
+input, textarea, select {
     *font-size:100%;
 }
 
-legend {
-    color:#000;
-}
-
-
+legend { color:#000; }
 
 
 
@@ -114,20 +120,25 @@ time, mark, audio, video {
     font: inherit;
     vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
     display: block;
 }
+
 body {
     line-height: 1;
 }
+
 ol, ul {
     list-style: none;
 }
+
 blockquote, q {
     quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
     content: '';
@@ -143,6 +154,7 @@ q:before, q:after {
 ins {
     text-decoration: none;
 }
+
 del {
     text-decoration: line-through;
 }
@@ -166,18 +178,61 @@ table {
 
 
 
-/* BEGIN CLASSES */
+
+
+
+/* BEGIN general classes, this is a mess */
+
+/* positioning (and alignment?) */
 
 .right { float: right; }
-
 .left { float: left; }
-
 .clear { clear: both; }
+.middle { vertical-align: middle; }
+
+/* dimensions */
+
+.zero { width: 0px; height: 0px; }
+
+/* display */
+
+.block { display: block; }
+.inline { display: inline; }
+.invisible { display: none; }
+.hidden { display: none; /* synonym necessary? */ }
+
+/* type */
+
+.biggest { font-size: 20px; }
+.bigger { font-size: 18px; }
+.big { font-size: 16px; }
+.medium { font-size: 14px; }
+.small { font-size: 12px; }
+.smaller { font-size: 10px; }
+.smallest { font-size: 8px; }
+.bold { font-weight: 600; }
+.normal { font-weight: 400; }
+.bolder { font-weight: 700; }
+.boldest { font-weight: 900; }
 
 .italic { font-style: italic; }
-
 .roman {font-style: normal; }
+.underline { text-decoration: underline; /* line-through? */ }
+.plain { text-decoration: none; }
 
-/* END CLASSES */
+/* colors for me */
 
+.lighter_gray { color: #eee; }
+.light_gray { color: #ccc; }
+.gray { color: #999999; }
+.dark_gray { color: #666666; }
+.darker_gray { color: #666666; }
+.red { color: #ff9900; }
+.yellow { color: #ffcc33; }
+.black { color: #000000; }
+.blue { color: #2b82ad; }
 
+.thin { height: 1px; }
+.thick { height: 2px; }
+
+/* END general classes */
