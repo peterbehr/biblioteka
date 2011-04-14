@@ -15,4 +15,25 @@
 
 */
 
+// ajax utilities
+// text input clearing utilities
+
+$('input').focus(function () { \\ input field, bind on focus
+    var original_string = ''; \\ phrase for comparison
+    
+    if ($('input').html() == original_string) {
+        // clear stuff
+    } else {
+    }
+});
+
+$('input').blur(function () {
+    // stuff
+});
+
+// inside or outside document window
+
+function eric() {
+}
+
 </script>
