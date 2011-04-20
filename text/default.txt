@@ -1,5 +1,3 @@
-* Move boilerplate text into defaults
-
 ORATIO IN CATILINAM PRIMA IN SENATU HABITA
 
 MARCUS TULLIUS CICERO
@@ -222,6 +220,7 @@ Quare secedant inprobi, secernant se a bonis, unum in locum congregentur, muro d
 XXXIII
 
 Hisce ominibus, Catilina, cum summa rei publicae salute, cum tua peste ac pernicie cumque eorum exitio, qui se tecum omni scelere parricidioque iunxerunt, proficiscere ad impium bellum ac nefarium. Tu, Iuppiter, qui isdem quibus haec urbs auspiciis a Romulo es constitutus, quem Statorem huius urbis atque imperii vere nominamus, hunc et huius socios a tuis [aris] ceterisque templis, a tectis urbis ac moenibus, a vita fortunisque civium [omnium] arcebis et homines bonorum inimicos, hostis patriae, latrones Italiae scelerum foedere inter se ac nefaria societate coniunctos aeternis suppliciis vivos mortuosque mactabis.
+
 
 
 

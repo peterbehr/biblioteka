@@ -13,27 +13,22 @@
 </script>
 <![endif]-->
 
+// single quotes
+// Logging: Venkman, fvlogger
+// the closure ()()
+// js cookies
+// decide on whitespace function()
+// http://expressjs.com/guide.html
+// semicolons?
+// ajax utilities
+// inside or outside document window
+
 */
 
-// ajax utilities
-// text input clearing utilities
-
-$('input').focus(function () { \\ input field, bind on focus
-    var original_string = ''; \\ phrase for comparison
-    
-    if ($('input').html() == original_string) {
-        // clear stuff
-    } else {
-    }
+$('input').focus(function () { // input field, bind on focus
 });
 
 $('input').blur(function () {
-    // stuff
 });
-
-// inside or outside document window
-
-function eric() {
-}
 
 </script>

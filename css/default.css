@@ -10,18 +10,8 @@ http://peterbehr.net
 /***
 
 * Clean up resets
-* Make default classes
-
 * rough table of contents
-* fix property/selector pairs separated by a colon without a space
-* comment
-
-
-* url(''); or url("");
-
-
-
-BEGIN notes
+* url(''); or url("");?
 
 display
 positioning
@@ -34,20 +24,15 @@ background
 color
 type related
 
-END notes
-
 ***/
 
 
 
-/* BEGIN RESETS */
+/* BEGIN resets */
 
 /*
 
-Taken from:
-
-YUI
-Eric Meyer ( http://meyerweb.com/eric/tools/css/reset/)
+Taken from: YUI and Eric Meyer (http://meyerweb.com/eric/tools/css/reset/)
 
 * remember to define visible focus styles! ?
 * no default text color or background
@@ -55,8 +40,8 @@ Eric Meyer ( http://meyerweb.com/eric/tools/css/reset/)
 */
 
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
 }
 
 table {
@@ -65,13 +50,13 @@ table {
 }
 
 address,caption,cite,code,dfn,em,strong,th,var {
-    font-style:normal;
-    font-weight:normal;
+    font-style: normal;
+    font-weight: normal;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-size:100%;
-    font-weight:normal;
+    font-size: 100%;
+    font-weight: normal;
 }
 
 body { line-height: 1; }
@@ -80,15 +65,14 @@ ins { text-decoration: none; }
 del { text-decoration: line-through; }
 fieldset, img { border: 0px; }
 ol, ul, li { list-style: none; }
-caption, th { text-align:left; }
-sup { vertical-align:text-top; }
-sub { vertical-align:text-bottom; }
-input, textarea, select { *font-size:100%; }
-legend { color:#000; }
+caption, th { text-align: left; }
+sup { vertical-align: text-top; }
+sub { vertical-align: text-bottom; }
+input, textarea, select { *font-size: 100%; }
+legend { color: #000; }
 blockquote, q { quotes: none; }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote:before, blockquote:after, q:before, q:after {
     content: '';
     content: none;
 }
@@ -99,11 +83,10 @@ abbr, acronym {
 }
 
 input, textarea, select {
-    font-family:inherit;
-    font-size:inherit;
-    font-weight:inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
 }
-
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -127,18 +110,17 @@ time, mark, audio, video {
 }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section { display: block; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
 
-/* END RESETS */
-
-
-
-/* BEGIN ELEMENTS */
+/* END resets */
 
 
 
-/* END ELEMENTS */
+/* BEGIN elements */
+
+
+
+/* END elements */
 
 
 
@@ -152,7 +134,13 @@ footer, header, hgroup, menu, nav, section { display: block; }
 .right { float: right; }
 .left { float: left; }
 .clear { clear: both; }
+/* baseline? */
 .middle { vertical-align: middle; }
+.centered { margin-left: auto; margin-right: auto; }
+.justify { text-align: justify; }
+.center { text-align: center; }
+.flush_left { text-align: left; }
+.flush_right { text-align: right; }
 
 /* dimensions */
 
@@ -174,8 +162,10 @@ footer, header, hgroup, menu, nav, section { display: block; }
 .small { font-size: 12px; }
 .smaller { font-size: 10px; }
 .smallest { font-size: 8px; }
-.bold { font-weight: 600; }
+.lightest { font-weight: 100; }
+.light {font-weight: 200; }
 .normal { font-weight: 400; }
+.bold { font-weight: 600; }
 .bolder { font-weight: 700; }
 .boldest { font-weight: 900; }
 
