@@ -10,6 +10,8 @@ function import_js(src) {
 import_js('http://peterbehr.net/biblioteka/js/jquery-1.5.2.min.js');
 import_js('http://peterbehr.net/biblioteka/js/jquery_plugin_md5.js');
 
+
+
 /* BEGIN Google Analytics */
 
 var _gaq = _gaq || [];
