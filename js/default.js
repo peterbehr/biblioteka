@@ -35,6 +35,7 @@ function import_js(url) {
 }
 
 import_js('http://peterbehr.net/biblioteka/js/jquery-1.5.2.min.js');
+import_js('http://peterbehr.net/biblioteka/js/jquery_plugin_md5.js');
 
 $('input').focus(function () { // input field, bind on focus
 });
