@@ -1,5 +1,3 @@
-<script type="text/javascript">
-
 function import_js(src) {
     var script = document.createElement('script');
     script.type = 'text/javascript';
@@ -27,5 +25,3 @@ _gaq.push(['_trackPageview']);
 })();
 
 /* END Google Analytics */
-
-</script>
