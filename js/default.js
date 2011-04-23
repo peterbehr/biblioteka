@@ -1,12 +1,17 @@
-function import_js(src) {
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = src;
-    document.getElementsByTagName('head')[0].appendChild(script);
+function import_js(srcs, callback) {
+    var length = srcs.length;
+    for (var i = 0; i < length; i++) {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = srcs[i];
+        var script_first = document.getElementsByTagName('script')[0]; script_first.parentNode.insertBefore(script, script_first);
+    }
+    callback();
 }
 
-import_js('http://peterbehr.net/biblioteka/js/jquery-1.5.2.min.js');
-import_js('http://peterbehr.net/biblioteka/js/jquery_plugin_md5.js');
+import_js(  [   'http://peterbehr.net/biblioteka/js/jquery-1.5.2.min.js',
+                'http://peterbehr.net/biblioteka/js/jquery_plugin_md5.js'   ],
+            function () { return; } );
 
 
 
