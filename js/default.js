@@ -2,7 +2,7 @@ function import_js(src) {
     var script = document.createElement('script');
     script.type = 'text/javascript';
     script.src = src;
-    document.body.appendChild(script);
+    document.getElementsByTagName('head')[0].appendChild(script);
 }
 
 import_js('http://peterbehr.net/biblioteka/js/jquery-1.5.2.min.js');
