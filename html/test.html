@@ -3,156 +3,213 @@
 <html>
 
 <head>
+    <!--link rel="stylesheet" type="text/css" media="all" title="" href="../css/default.css" /-->
+    
+    <style>
+        .specimen * {
+            background: #ddd !important;
+            border: #aaa 1px solid !important;
+        }
+        
+        .element {
+            font-family: "Helvetica";
+        }
+        
+        
+    </style>
+    
+    <script type="text/javascript" src="http://peterbehr.net/biblioteka/js/jquery-1.5.2.min.js"></script>
+    
+    <script type="text/javascript">
+        $(function () {
+            $('#p .description .display').html($('#p .specimen').children().css('display'));
+            $('#p .description .height').html($('#p .specimen').children().css('height'));
+            $('#p .description .width').html($('#p .specimen').children().css('width'));
+        });
+    </script>
+    
 </head>
 
 <body>
-
-<p>
-    This is an example paragraph element.
-</p>
-
-<div>
-    This is an example div element.
-</div>
-
-<div>
-    This is an example div with: <span>an example span element</span>, <a>an example anchor element</a>, <b>an example bold element</b>, <i>an example italic element</i>, <u>an example underlined text element</u>, <em>an example em element</em>, <strong>an example strong element</strong>
-</div>
-
-<ul>
-    This is an example unordered list element.
-    <li>
-        This is an example list item element.
-    </li>
-</ul>
-
-<ol>
-    <li>
-        This is an example ordered list item.
-    </li>
-</ol>
-
-<table>
-    <tr>
-        <td>
-            This is a table cell.
-        </td>
-    </tr>
-</table>
-
-<hr />
-
-<h1>
-    Header level 1
-</h1>
-
-<h2>
-    Header level 2
-</h2>
-
-<h3>
-    Header level 3
-</h3>
-
-<h4>
-    Header level 4
-</h4>
-
-<h5>
-    Header level 5
-</h5>
-
-<h6>
-    Header level 6
-</h6>
-
-<section>
-    This is an example section.
-</section>
-
-<article>
-    This is an example article.
-</article>
-
-<aside>
-    This is an example aside.
-</aside>
-
-<header>
-    This is an example header.
-</header>
-
-<footer>
-    This is an example footer.
-</footer>
-
-<nav>
-    This is an example nav element.
-</nav>
-
-<figure>
-    This is an example figure element.
-</figure>
-
-<figcaption>
-    This is an example figcaption element.
-</figcaption>
-
-<video></video>
-
-<audio></audio>
-
-<source></source>
-<embed></embed>
-<mark>an example mark element</mark>
-
-<progress>
-    This is an example progress element.
-</progress>
-
-<meter>
-    This is an example meter element.
-</meter>
-
-<time>
-    This is an example time element.
-</time>
-
-<ruby>
-    This is an example ruby element.
-    <rt>
-        This is an example ruby text element.
-    </rt>
-    <rp>
-        This is an example rp element (I don't know what that means)
-    </rp>
-</ruby>
-
-<bdi></bdi>
-<wbr></wbr>
-<canvas></canvas>
-<details>
-    This is is an example details element.
-</details>
-
-<summary>
-    This is an example summary element.
-</summary>
-
-<datalist>
-    WHAT
-</datalist>
-
-<keygen>
-    This is an example keygen element.
-</keygen>
-
-<output>
-    This is an example output element.
-</output>
-
-
-
+    
+    <div id="p" class="element">
+        <div class="description">
+            The element below is a paragraph element.
+            <ul>
+                <li class="display">
+                </li>
+                <li class="height">
+                </li>
+                <li class="width">
+                </li>
+            </ul>
+        </div>
+        <div class="specimen">
+            <p>
+                This is an example paragraph element.
+            </p>
+        </div>
+    </div>
+    
+    <div>
+        This is an example div element.
+    </div>
+    
+    <div>
+        This is an example div element with: <span>an example span element</span>, <a>an example anchor element</a>, <b>an example bold element</b>, <i>an example italic element</i>, <u>an example underlined text element</u>, <em>an example em element</em>, <strong>an example strong element</strong>
+    </div>
+    
+    <ul>
+        This is an example unordered list element.
+        <li>
+            This is an example list item element.
+        </li>
+    </ul>
+    
+    <ol>
+        This is an example ordered list element.
+        <li>
+            This is an example ordered list item.
+        </li>
+    </ol>
+    
+    <dl>
+        This is an example definition list element.
+        <dt>
+            This is an example definition dt element?
+        </dt>
+        <dd>
+            This is an example dd element?
+        </dd>
+    
+    <table>
+        <caption>
+            This is an example caption element.
+        </caption>
+        <tr>
+            <td>
+                This is a table cell.
+            </td>
+        </tr>
+    </table>
+    
+    <hr />
+    
+    <h1>
+        Header level 1
+    </h1>
+    
+    <h2>
+        Header level 2
+    </h2>
+    
+    <h3>
+        Header level 3
+    </h3>
+    
+    <h4>
+        Header level 4
+    </h4>
+    
+    <h5>
+        Header level 5
+    </h5>
+    
+    <h6>
+        Header level 6
+    </h6>
+    
+    
+    
+    <section>
+        This is an example section.
+    </section>
+    
+    <article>
+        This is an example article.
+    </article>
+    
+    <aside>
+        This is an example aside.
+    </aside>
+    
+    <header>
+        This is an example header.
+    </header>
+    
+    <footer>
+        This is an example footer.
+    </footer>
+    
+    <nav>
+        This is an example nav element.
+    </nav>
+    
+    <figure>
+        This is an example figure element.
+    </figure>
+    
+    <figcaption>
+        This is an example figcaption element.
+    </figcaption>
+    
+    <video></video>
+    
+    <audio></audio>
+    
+    <source></source>
+    
+    <embed></embed>
+    
+    <mark>
+        This is an example mark element.
+    </mark>
+    
+    <progress>
+        This is an example progress element.
+    </progress>
+    
+    <meter>
+        This is an example meter element.
+    </meter>
+    
+    <time>
+        This is an example time element.
+    </time>
+    
+    <ruby>
+        This is an example ruby element.
+        <rt>
+            This is an example ruby text element.
+        </rt>
+        <rp>
+            This is an example rp element (I don't know what that means)
+        </rp>
+    </ruby>
+    
+    <bdi></bdi>
+    <wbr></wbr>
+    <canvas></canvas>
+    <details>
+        This is is an example details element.
+    </details>
+    
+    <summary>
+        This is an example summary element.
+    </summary>
+    
+    <datalist>
+        This is an example datalist element?
+    </datalist>
+    
+    <keygen>
+        This is an example keygen element.
+    </keygen>
+    
+    <output>
+        This is an example output element.
+    </output>
+    
 </body>
 
 </html>

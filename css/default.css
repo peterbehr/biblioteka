@@ -9,20 +9,6 @@ http://peterbehr.net
 
 /***
 
-* Clean up resets
-* rough table of contents
-* url(''); or url("");?
-
-display
-positioning
-width
-height
-padding
-border
-margin
-background
-color
-type related
 
 ***/
 
@@ -49,7 +35,7 @@ table {
     border-spacing: 0px;
 }
 
-address,caption,cite,code,dfn,em,strong,th,var {
+address, caption, cite, code, dfn, em, strong, th, var {
     font-style: normal;
     font-weight: normal;
 }
