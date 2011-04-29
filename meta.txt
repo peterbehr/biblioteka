@@ -24,6 +24,8 @@ HTML (Regenstein)
 CSS (Crerar)
 
 * Single quotes are used in CSS whenever necessary, e.g. url('');.
+* Resets don't define a default text color or background color.
+* Measurements of 0 always have a contextually appropriate unit appended.
 
 
 
