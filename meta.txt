@@ -35,6 +35,7 @@ Conventions:
 
 * Single quotes are used in JS.
 * Semicolons, though optional, are always used.
+* Anonymous functions are written with a space between the function keyword and empty argument parentheses.
 
 
 

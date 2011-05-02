@@ -19,7 +19,7 @@ http://peterbehr.net
 
 Sources:
 
-* YUI ()
+* YUI (http://developer.yahoo.com/yui/3/cssreset/)
 * Eric Meyer (http://meyerweb.com/eric/tools/css/reset/)
 
 */
@@ -81,10 +81,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 .center { margin-left: auto; margin-right: auto; }
 .baseline { vertical-align: baseline; }
 .middle { vertical-align: middle; }
-.justified { text-align: justify; }
-.centered { text-align: center; }
-.flush_left { text-align: left; }
-.flush_right { text-align: right; }
+.text_justify { text-align: justify; }
+.text_center { text-align: center; }
+.text_left { text-align: left; }
+.text_right { text-align: right; }
 
 /* dimensions */
 
@@ -94,8 +94,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 .block { display: block; }
 .inline { display: inline; }
-.invisible { display: none; }
-.hidden { display: none; /* synonym necessary? */ }
+.hidden { display: none; }
 
 /* type */
 
@@ -114,7 +113,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 .boldest { font-weight: 900; }
 .italic { font-style: italic; }
 .roman {font-style: normal; }
-.underline { text-decoration: underline; /* line-through? */ }
+.underline { text-decoration: underline; }
 .plain { text-decoration: none; }
 
 /* colors */
