@@ -29,28 +29,22 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     padding: 0px;
     border: 0px;
     outline: 0px;
-    line-height: 1;
+    vertical-align: baseline;
+    line-height: inherit;
+    font-family: inherit;
     font-size: 100%;
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    vertical-align: baseline;
 }
 
-table {
-    border-collapse: collapse;
-    border-spacing: 0px;
-}
+html { line-height: 1; }
+
+table { border-collapse: collapse; border-spacing: 0px; }
 
 blockquote, q { quotes: none; }
 
-blockquote:before, blockquote:after, q:before, q:after {
-    content: '';
-    content: none;
-}
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
 
 ins { text-decoration: none; }
 
@@ -63,6 +57,9 @@ caption, th { text-align: left; }
 sup { vertical-align: text-top; }
 
 sub { vertical-align: text-bottom; }
+
+hr { margin: 0px; padding: 0px; }
+
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
