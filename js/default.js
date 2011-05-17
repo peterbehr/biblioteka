@@ -11,10 +11,10 @@ function import_js(srcs, callback) {
     callback();
 }
 
-    import_js(  [   'http://peterbehr.net/biblioteka/js/others/\
-                    jquery-1.5.2.min.js',
-                    'http://peterbehr.net/biblioteka/js/others/\
-                    jquery_plugin_md5.js' ],
+    import_js(  [
+'http://peterbehr.net/biblioteka/js/others/jquery-1.5.2.min.js',
+'http://peterbehr.net/biblioteka/js/others/jquery_plugin_md5.js'
+                ],
                 function () { return; } );
 
 /* END script import */
