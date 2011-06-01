@@ -1,0 +1,8 @@
+1. After cloning Git repository, move preferences (iTerm 2, Apple Terminal
+currently) into system library.
+
+PREFERENCES NOT YET ADDED
+
+* Adobe
+* .vimrc and vim packages
+* .bashrc and .bash_profile
