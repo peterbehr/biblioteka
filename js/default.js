@@ -1,6 +1,6 @@
 /* BEGIN script import */
 
-function import_js(srcs, callback) {
+function import_js(src, callback) {
     var length = srcs.length;
     for (var i = 0; i < length; i++) {
         var script = document.createElement('script');
