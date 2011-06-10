@@ -18,6 +18,7 @@ GENERAL
 HTML (Regenstein)
 
 * Double quotes are used in HTML.
+* Comments begin after the <!DOCTYPE> declaration to prevent IE from going into quirks mode.
 
 
 

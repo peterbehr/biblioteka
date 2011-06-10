@@ -1,6 +1,5 @@
 [project name]
 [version]
-[date]
 Peter Behr made this
 http://peterbehr.net
 
