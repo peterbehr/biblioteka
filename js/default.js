@@ -1,3 +1,12 @@
+/*
+
+Biblioteka
+Version 0
+Peter Behr made this
+http://peterbehr.net
+
+*/
+
 /* BEGIN utilities */
 
 function import_js(src, callback) {
