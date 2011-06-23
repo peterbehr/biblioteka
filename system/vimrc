@@ -1,0 +1,22 @@
+"set background=dark
+set ai
+set nu
+set textwidth=80
+set ts=4
+set sw=4
+set encoding=utf-8
+set mouse=a
+syntax on
+
+""""""PATHOGEN INITIALIZATION"""""""""""""""""
+filetype off                                                                
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
+autocmd VimEnter * NERDTree
+
+" http://www.oualline.com/vim-cook.html
+" http://vim.wikia.com/wiki/Vim_Tips_Wiki
+" NEXT: syntax highlighting
+" project specific vimrcs in different files? source?
+" scrollbar
