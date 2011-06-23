@@ -15,18 +15,18 @@ GENERAL
 
 
 
-HTML (Regenstein)
-
-* Double quotes are used in HTML.
-* Comments begin after the <!DOCTYPE> declaration to prevent IE from going into quirks mode.
-
-
-
 CSS (Crerar)
 
 * Single quotes are used in CSS whenever necessary, e.g. url('');.
 * Resets don't define a default text color or background color.
 * Measurements of 0 always have a contextually appropriate unit appended.
+
+
+
+HTML (Regenstein)
+
+* Double quotes are used in HTML.
+* Comments begin after the <!DOCTYPE> declaration to prevent IE from going into quirks mode.
 
 
 
@@ -40,12 +40,18 @@ Conventions:
 
 
 
+SYSTEM (D'Angelo)
+
+* Caveat usor!
+
+
+
 TEXT (Harper)
 
 * Double linebreaks separate paragraphs, triple linebreaks separate sections.
 
 
 
-SYSTEM (D'Angelo)
+TYPE ()
 
-* Caveat usor!
+* Empty at the moment, sadly.
