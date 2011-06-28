@@ -46,7 +46,7 @@ ins { text-decoration: none; }
 
 del { text-decoration: line-through; }
 
-ol, ul, li { list-style: none; }
+ol, ul, li { list-style-type: none; }
 
 caption, th { text-align: left; }
 
