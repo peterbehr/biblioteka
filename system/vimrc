@@ -1,28 +1,56 @@
-""""""PATHOGEN INITIALIZATION"""""""""""""""""
-filetype off                                                                
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-
-"set background=dark
-set ai
-set nu
-set textwidth=80
-set ts=4
-set sw=4
-set encoding=utf-8
-set mouse=a
-set ruler
-syntax on
-
-nnoremap <silent> <C-n> :NERDTreeToggle<CR>
-noremap <silent> <C-h> :bp<CR>
-noremap <silent> <C-l> :bn<CR>
-
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd l
+""" Peter Behr's .vimrc, whoo
 
 " http://www.oualline.com/vim-cook.html
 " http://vim.wikia.com/wiki/Vim_Tips_Wiki
-" NEXT: syntax highlighting
-" project specific vimrcs in different files? source?
-" scrollbar
+" whitespace rules?
+
+""" Pathogen
+
+filetype off
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
+""" syntax
+
+set background=dark
+syntax on
+
+""" display
+
+set ruler " want scrollbar position
+set listchars=tab:▸\ ,eol:¬
+set list
+"set textwidth=80 " want soft rewrap
+" want alternating four space columns on background
+
+""" indentation
+
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set ai
+
+""" encoding
+
+set encoding=utf-8
+
+""" other
+
+set mouse=a
+set nu " what is this?
+
+" key mappings
+
+noremap <silent> <C-n> :NERDTreeToggle<CR>
+noremap <silent> <C-h> :bp<CR>
+noremap <silent> <C-l> :bn<CR>
+"noremap <silent> <C-c> <C-w><C-w>
+"noremap <silent> <Esc>
+"noremap <silent> :qall
+" save as
+
+""" start commands
+
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd l
