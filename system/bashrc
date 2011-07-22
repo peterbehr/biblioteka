@@ -4,14 +4,19 @@
 
 alias ls='ls -la'
 alias faction='ssh psbehr@psbehr.webfactional.com'
-alias cc=gcc
 
-export PS1="\h:\w \\$ "
+export PS1="\[\e[0;33m\]\h:\w \\$ \[\e[0m\]"
 export CLICOLOR=1
 export LSCOLORS=gxfxcxdxcxeggdcbcgacad
 export TERM=xterm-color
 
-cd ~/Documents/code/active/
+if [ -e ~/.bashrc_extra ]; then
+    . ~/.bashrc_extra
+fi
+
+if [ -e ~/Documents/code/active/ ]; then
+    cd ~/Documents/code/active/
+fi
 
 # OS X specific on Nova 
 
