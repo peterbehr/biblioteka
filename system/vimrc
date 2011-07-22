@@ -1,56 +1,31 @@
-""" Peter Behr's .vimrc, whoo
+# http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html
+# http://www.gnu.org/software/bash/manual/bashref.html
+# how to override an alias?
 
-" http://www.oualline.com/vim-cook.html
-" http://vim.wikia.com/wiki/Vim_Tips_Wiki
-" whitespace rules?
+alias ls='ls -la'
+alias faction='ssh psbehr@psbehr.webfactional.com'
 
-""" Pathogen
+export PS1="\[\e[0;33m\]\h:\w \\$ \[\e[0m\]"
+export CLICOLOR=1
+export LSCOLORS=gxfxcxdxcxeggdcbcgacad
+export TERM=xterm-color
 
-filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+if [ -e ~/.bashrc_extra ]; then
+    . ~/.bashrc_extra
+fi
 
-""" syntax
+if [ -e ~/Documents/code/active/ ]; then
+    cd ~/Documents/code/active/
+fi
 
-set background=dark
-syntax on
+# OS X specific on Nova 
 
-""" display
-
-set ruler " want scrollbar position
-set listchars=tab:▸\ ,eol:¬
-set list
-"set textwidth=80 " want soft rewrap
-" want alternating four space columns on background
-
-""" indentation
-
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set expandtab
-set ai
-
-""" encoding
-
-set encoding=utf-8
-
-""" other
-
-set mouse=a
-set nu " what is this?
-
-" key mappings
-
-noremap <silent> <C-n> :NERDTreeToggle<CR>
-noremap <silent> <C-h> :bp<CR>
-noremap <silent> <C-l> :bn<CR>
-"noremap <silent> <C-c> <C-w><C-w>
-"noremap <silent> <Esc>
-"noremap <silent> :qall
-" save as
-
-""" start commands
-
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd l
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export PATH=/Library/Frameworks/UnixImageIO.framework/Programs:$PATH
+export PATH=/Library/Frameworks/PROJ.framework/Programs:$PATH
+export PATH=/Library/Frameworks/GEOS.framework/Programs:$PATH
+export PATH=/Library/Frameworks/SQLite3.framework/Programs:$PATH
+export PATH=/Library/Frameworks/GDAL.framework/Programs:$PATH
+export PATH=/usr/local/node/bin:$PATH
+export PATH=/usr/local/mysql/bin:$PATH
+#PATH=$PATH:/usr/local/teTeX/bin/powerpc-apple-darwin-current
