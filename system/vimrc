@@ -1,9 +1,12 @@
-""" Peter Behr's .vimrc, whoo
+""" Peter Behr's .vimrc
 
 " http://www.oualline.com/vim-cook.html
 " http://vim.wikia.com/wiki/Vim_Tips_Wiki
 " whitespace rules?
 " http://vimdoc.sourceforge.net
+" http://hea-www.harvard.edu/~fine/Tech/vi.html (key bindings)
+
+
 
 """ Pathogen
 
@@ -11,12 +14,16 @@ filetype off
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-""" syntax
+
+
+""" settings
+
+" syntax
 
 set background=dark
 syntax on
 
-""" display
+" display
 
 set nu " line numbers
 set ruler " want scrollbar position
@@ -25,43 +32,64 @@ set list
 "set textwidth=80 " want soft rewrap
 " want alternating four space columns on background
 
-""" indentation
+" indentation
 
-set tabstop=4
+"set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
-set ai
+set autoindent
 
-""" encoding
+" encoding
 
 set encoding=utf-8
 
-""" other
+" other
 
 set mouse=a
 set directory=/tmp,/var/tmp,.
 
-" key mappings
 
+
+""" key mappings
+
+" preserve lines with only whitespace, a hack I know
+inoremap <CR> .<BS><CR>
+inoremap <Up> .<BS><Up>
+inoremap <Down> .<BS><Down>
+
+" NERDTree related
 noremap <silent> <C-n> :NERDTreeToggle<CR>
+noremap <silent> <C-o> <C-w>w
+
+" switch between open buffers
 noremap <silent> <C-h> :bp<CR>
 noremap <silent> <C-l> :bn<CR>
-" copying, this is broken
-vnoremap <silent> <C-c> :!pbcopy<CR>
-" need pasting and cutting, obviously
-" quitting, this also has problems
-noremap <silent> <C-q> :qall<CR>
-noremap <silent> <C-w> :q<CR>
-noremap <silent> <C-o> <C-w>w
-"noremap <silent> <Esc>
-"noremap <silent> :qall
-" save as
 
-" mapping for qall
+" copying, this is broken, also need pasting and cutting
+vnoremap <silent> <C-c> :!pbcopy<CR>
+
+" quitting entirely
+"noremap <silent> <C-i> :qall<CR>
+"inoremap <silent> <C-i> <C-o>:qall<CR>
+"vnoremap <silent> <C-i> <C-c>:qall<CR>
+
+" closing windows
+nnoremap <silent> <C-w> :q<CR>
+inoremap <silent> <C-w> <C-o>:q<CR>
+vnoremap <silent> <C-w> <C-c>:q<CR>
+
+" saving
+nnoremap <silent> <C-k> :update<CR>
+inoremap <silent> <C-k> <C-o>:update<CR>
+vnoremap <silent> <C-k> <C-c>:update<CR>
+
+" save as
 " including modules?
-" mapping for moving between nerdtree and elsewhere
-" nerdtree width
+" nerdtree width?
+" want alt. color four space columns on background
+" start in insert mode
+
 
 
 """ start commands

@@ -7,14 +7,20 @@ http://peterbehr.net
 
 */
 
-/* BEGIN utilities */
-
-function import_js(src, callback) {
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = src;
-    var first = document.getElementsByTagName('script')[0]; first.parentNode.insertBefore(script, first);
-    callback();
+var Biblioteka = {
+    
+    // BEGIN utilities
+    
+    import_js: function (src, callback) {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = src;
+        var first = document.getElementsByTagName('script')[0]; first.parentNode.insertBefore(script, first);
+        callback();
+    }
+    
+    // END utilities
+    
 }
 
-/* END utilities */
+window.Biblioteka = window.Bi = Biblioteka;

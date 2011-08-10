@@ -4,6 +4,7 @@
 
 alias ls='ls -la'
 alias faction='ssh psbehr@psbehr.webfactional.com'
+alias 'git-purge'='git rm $(git ls-files --deleted)'
 
 export PS1="\[\e[0;33m\]\h:\w \\$ \[\e[0m\]"
 export CLICOLOR=1
@@ -17,15 +18,3 @@ fi
 if [ -e ~/Documents/code/active/ ]; then
     cd ~/Documents/code/active/
 fi
-
-# OS X specific on Nova 
-
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-export PATH=/Library/Frameworks/UnixImageIO.framework/Programs:$PATH
-export PATH=/Library/Frameworks/PROJ.framework/Programs:$PATH
-export PATH=/Library/Frameworks/GEOS.framework/Programs:$PATH
-export PATH=/Library/Frameworks/SQLite3.framework/Programs:$PATH
-export PATH=/Library/Frameworks/GDAL.framework/Programs:$PATH
-export PATH=/usr/local/node/bin:$PATH
-export PATH=/usr/local/mysql/bin:$PATH
-#PATH=$PATH:/usr/local/teTeX/bin/powerpc-apple-darwin-current
