@@ -20,8 +20,10 @@ call pathogen#helptags()
 
 " syntax
 
-set background=dark
 syntax on
+set background=dark
+let &t_Co=256
+colorscheme sunburst
 
 " display
 
