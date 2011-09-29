@@ -15,6 +15,12 @@ if [ -e ~/.bashrc_extra ]; then
     . ~/.bashrc_extra
 fi
 
+# put alternatives in ~/.bashrc_extra
 if [ -e ~/Documents/code/active/ ]; then
     cd ~/Documents/code/active/
 fi
+
+# load RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+# Load RVM completion
+[[ -r "$rvm_path/scripts/completion" ]] && . "$rvm_path/scripts/completion"
