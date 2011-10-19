@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>if [ "$TM_SOFT_TABS" == "NO" ]; then
+    INDENT=" "
+else
+    INDENT="                                "
+    INDENT=${INDENT:0:$TM_TAB_SIZE}
+fi
+if [ "$TM_SELECTED_TEXT" == "" ]; then
+    echo -n "$INDENT$TM_CURRENT_LINE"
+else
+    LF="
+" # line feed; this does not work for all Unicode line endings
+    # do not add indentation after final line feed.
+    LAST_CHAR="${TM_SELECTED_TEXT:${#TM_SELECTED_TEXT}-1:1}"
+    TM_SELECTED_TEXT="${TM_SELECTED_TEXT:0:${#TM_SELECTED_TEXT}-1}"
+    # Add indentation after each $LF (line feed)
+    echo -n "$INDENT${TM_SELECTED_TEXT//$LF/$LF$INDENT}$LAST_CHAR"
+fi</string>
+	<key>fallbackInput</key>
+	<string>line</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>keyEquivalent</key>
+	<string>@]</string>
+	<key>name</key>
+	<string>Indent empty lines</string>
+	<key>output</key>
+	<string>replaceSelectedText</string>
+	<key>uuid</key>
+	<string>95AF68EE-2DB9-42BF-9C29-3C2D670B8352</string>
+</dict>
+</plist>
