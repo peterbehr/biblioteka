@@ -1,26 +1,60 @@
-# http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html
-# http://www.gnu.org/software/bash/manual/bashref.html
-# how to override an alias?
+# variables
 
-alias ls='ls -la'
-alias faction='ssh psbehr@psbehr.webfactional.com'
-alias 'git-purge'='git rm $(git ls-files --deleted)'
+DIR_DOWNLOADS=~/Downloads/active
+DIR_CODE=~/Documents/code/active
+DIR_DROPBOX=~/Dropbox
+BLUE='\[\e[0;34m\]'
+YELLOW='\[\e[0;33m\]'
+GREEN='\[\e[0;32m\]'
+RED='\[\e[0;31m\]'
+GRAY='\[\e[0;30m\]'
+CLEAR='\[\e[0m\]'
 
-export PS1="\[\e[0;33m\]\h:\w \\$ \[\e[0m\]"
-export CLICOLOR=1
-export LSCOLORS=gxfxcxdxcxeggdcbcgacad
-export TERM=xterm-color
+
+
+# includes
 
 if [ -e ~/.bashrc_extra ]; then
     . ~/.bashrc_extra
 fi
 
-# put alternatives in ~/.bashrc_extra
-if [ -e ~/Documents/code/active/ ]; then
-    cd ~/Documents/code/active/
-fi
 
-# load RVM
+
+# command alii (if vars aren't defined then cd is called without args
+
+alias ls='ls -la'
+alias faction='ssh psbehr@psbehr.webfactional.com'
+alias ho='cd ~; ls'
+alias db='cd $DIR_DROPBOX; ls'
+alias dl='cd $DIR_DOWNLOADS; ls' # downloads
+alias wo='cd $DIR_CODE; ls' # get to work
+
+
+
+# functions
+
+function get_git_branch() { # via Eran Kampf
+    git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
+}
+
+
+
+# exports
+
+export PS1="$YELLOW\h:\w$GREEN \$(get_git_branch)$YELLOW\\$ $CLEAR"
+export CLICOLOR=1
+export LSCOLORS=gxfxcxdxcxeggdcbcgacad
+export TERM=xterm-color
+
+
+
+# default actions
+
+cd $DIR_CODE; ls
+
+
+
+# load RVM and completion
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-# Load RVM completion
 [[ -r "$rvm_path/scripts/completion" ]] && . "$rvm_path/scripts/completion"

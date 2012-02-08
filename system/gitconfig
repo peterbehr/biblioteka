@@ -1,0 +1,17 @@
+[user]
+	name = Peter Behr
+	email = pbehr@uchicago.edu
+[alias]
+	purge = !git rm $(git ls-files --deleted)
+	ignored = ls-files -o -i --exclude-standard
+	count = !git shortlog -n $@ | grep \"):\" | sed \"s|:||\"
+	st = status
+	ci = commit
+	br = branch
+	co = checkout
+	df = diff
+	pl = pull origin master
+	ps = push origin master
+	al = add .
+[color]
+	diff = auto
