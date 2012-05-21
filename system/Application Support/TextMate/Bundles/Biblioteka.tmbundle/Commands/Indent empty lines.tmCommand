@@ -6,7 +6,7 @@
 	<string>nop</string>
 	<key>command</key>
 	<string>if [ "$TM_SOFT_TABS" == "NO" ]; then
-    INDENT=" "
+    INDENT="	"
 else
     INDENT="                                "
     INDENT=${INDENT:0:$TM_TAB_SIZE}

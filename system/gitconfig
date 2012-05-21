@@ -5,6 +5,7 @@
 	purge = !git rm $(git ls-files --deleted)
 	ignored = ls-files -o -i --exclude-standard
 	count = !git shortlog -n $@ | grep \"):\" | sed \"s|:||\"
+	modules = submodule foreach git pull origin master
 	st = status
 	ci = commit
 	br = branch
@@ -13,5 +14,6 @@
 	pl = pull origin master
 	ps = push origin master
 	al = add .
+	sm = submodule foreach
 [color]
 	diff = auto
