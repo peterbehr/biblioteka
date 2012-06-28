@@ -32,3 +32,9 @@ Icon?
 .hg
 .svn
 .CVS
+
+
+
+# repo specific
+
+/resources
