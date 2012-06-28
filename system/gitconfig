@@ -1,13 +1,15 @@
 [user]
 	name = Peter Behr
-	email = pbehr@uchicago.edu
+	email = git@peterbehr.net
 [alias]
 	purge = !git rm $(git ls-files --deleted)
 	ignored = ls-files -o -i --exclude-standard
 	count = !git shortlog -n $@ | grep \"):\" | sed \"s|:||\"
 	modules = submodule foreach git pull origin master
+	amend = commit --amend
 	st = status
 	ci = commit
+	cm = commit
 	br = branch
 	co = checkout
 	df = diff

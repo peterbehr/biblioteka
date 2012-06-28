@@ -9,6 +9,9 @@ GREEN='\[\e[0;32m\]'
 RED='\[\e[0;31m\]'
 GRAY='\[\e[0;30m\]'
 CLEAR='\[\e[0m\]'
+WHITE="\[\033[0;37m\]"
+MAGENTA="\[\033[0;35m\]"
+CYAN="\[\033[0;36m\]"
 
 
 
@@ -28,20 +31,31 @@ alias ho='cd ~; ls'
 alias db='cd $DIR_DROPBOX; ls'
 alias dl='cd $DIR_DOWNLOADS; ls' # downloads
 alias wo='cd $DIR_CODE; ls' # get to work
+alias hico='history | awk "{ print \$2 }" | sort | uniq -c | sort -n | tail -n 10 | sort -r;'
 
 
 
 # functions
 
 function get_git_branch() { # via Eran Kampf
-    git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
+    local branch=$(git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')
+    [ "$branch" != "" ] && echo " $branch"
+}
+
+function get_rvm_prompt() { # via Tammer Saleh
+    local gemset=$(echo $GEM_HOME | awk -F'@' '{print $2}')
+    [ "$gemset" != "" ] && gemset="@$gemset"
+    local version=$(echo $MY_RUBY_HOME | awk -F'-' '{print $2}')
+    [ "$version" == "1.8.7" ] && version=""
+    local full="$version$gemset"
+    [ "$full" != "" ] && echo " $full"
 }
 
 
 
 # exports
 
-export PS1="$YELLOW\h:\w$GREEN \$(get_git_branch)$YELLOW\\$ $CLEAR"
+export PS1="$YELLOW\h:\w$GREEN\$(get_git_branch)$CYAN\$(get_rvm_prompt)$YELLOW \\$ $CLEAR"
 export CLICOLOR=1
 export LSCOLORS=gxfxcxdxcxeggdcbcgacad
 export TERM=xterm-color
@@ -58,3 +72,5 @@ cd $DIR_CODE; ls
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 [[ -r "$rvm_path/scripts/completion" ]] && . "$rvm_path/scripts/completion"
+
+PATH=/usr/local/bin:$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

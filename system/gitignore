@@ -1,4 +1,34 @@
+# OS cruft
+
 .DS_Store
+.cache
+.project
+.settings
+.tmproj
+nbproject
+Thumbs.db
 .localized
 Icon?
+
+
+
+# other
+
 *~
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+*.sass-cache
+
+
+
+# version control
+
+.hg
+.svn
+.CVS
