@@ -1,6 +1,6 @@
 [user]
 	name = Peter Behr
-	email = git@peterbehr.net
+	email = code@peterbehr.net
 [alias]
 	purge = !git rm $(git ls-files --deleted)
 	ignored = ls-files -o -i --exclude-standard
