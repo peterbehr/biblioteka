@@ -32,6 +32,7 @@ alias db='cd $DIR_DROPBOX; ls'
 alias dl='cd $DIR_DOWNLOADS; ls' # downloads
 alias wo='cd $DIR_CODE; ls' # get to work
 alias hico='history | awk "{ print \$2 }" | sort | uniq -c | sort -n | tail -n 10 | sort -r;'
+alias x='exit'
 
 
 
