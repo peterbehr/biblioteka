@@ -71,3 +71,41 @@ http://peterbehr.net
 .blue { color: #2b82ad; }
 
 /* END general classes */
+
+
+
+/* RGBA */
+
+background-color: rgba(0, 0, 0, 0.5);
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#80000000, endColorstr=#80000000);
+-ms-filter: 'progid:DXImageTransform.Microsoft.gradient(startColorstr=#80000000, endColorstr=#80000000)';
+
+/* opacity */
+
+-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+filter: alpha(opacity=50);
+opacity: 0.5;
+
+/* background gradients */
+
+@mixin rgba_bg($color_obj, $color_str, $alpha_dec, $alpha_hex) {
+	$hash: '#';
+	background-color: none;
+	background-color: rgba(red($color_obj), green($color_obj), blue($color_obj), $alpha_dec);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$hash}#{$alpha_hex}#{$color_str}, endColorstr=#{$hash}#{$alpha_hex}#{$color_str});
+	-ms-filter: 'progid:DXImageTransform.Microsoft.gradient(startColorstr=##{$alpha_hex}#{$color_str}, endColorstr=##{$alpha_hex}#{$color_str})';
+}
+
+@mixin rotate($degrees, $origin_x: 0%, $origin_y: 0%) {
+	-webkit-transform-origin: $origin_x $origin_y;
+	-moz-transform-origin: $origin_x $origin_y;
+	-ms-transform-origin: $origin_x $origin_y;
+	-o-transform-origin: $origin_x $origin_y;
+	transform-origin: $origin_x $origin_y;
+	-webkit-transform: rotate(#{$degrees}deg);
+	-moz-transform: rotate(#{$degrees}deg);
+	-ms-transform: rotate(#{$degrees}deg);
+	-o-transform: rotate(#{$degrees}deg);
+	transform: rotate(#{$degrees}deg);
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=#{$degrees / 90});
+}
