@@ -1,6 +1,7 @@
 # variables
 
 DIR_DOWNLOADS=~/Downloads/active
+DIR_WORK=~/Downloads/active/project_gather
 DIR_CODE=~/Documents/code/active
 DIR_DROPBOX=~/Dropbox
 BLUE='\[\e[0;34m\]'
@@ -13,15 +14,11 @@ WHITE="\[\033[0;37m\]"
 MAGENTA="\[\033[0;35m\]"
 CYAN="\[\033[0;36m\]"
 
-
-
 # includes
 
 if [ -e ~/.bashrc_extra ]; then
     . ~/.bashrc_extra
 fi
-
-
 
 # command alii (if vars aren't defined then cd is called without args
 
@@ -30,11 +27,11 @@ alias faction='ssh psbehr@psbehr.webfactional.com'
 alias ho='cd ~; ls'
 alias db='cd $DIR_DROPBOX; ls'
 alias dl='cd $DIR_DOWNLOADS; ls' # downloads
-alias wo='cd $DIR_CODE; ls' # get to work
+alias work='cd $DIR_WORK; ls' # get to work on work
+alias proj='cd $DIR_CODE; ls' # get to work on projects
 alias hico='history | awk "{ print \$2 }" | sort | uniq -c | sort -n | tail -n 10 | sort -r;'
 alias x='exit'
-
-
+alias reload='clear; exec bash'
 
 # functions
 
@@ -52,22 +49,24 @@ function get_rvm_prompt() { # via Tammer Saleh
     [ "$full" != "" ] && echo " $full"
 }
 
-
-
 # exports
 
 export PS1="$YELLOW\h:\w$GREEN\$(get_git_branch)$CYAN\$(get_rvm_prompt)$YELLOW \\$ $CLEAR"
 export CLICOLOR=1
 export LSCOLORS=gxfxcxdxcxeggdcbcgacad
 export TERM=xterm-color
-
-
+export NODE_PATH="/usr/local/share/npm/lib/node_modules"
+export PATH=/usr/local/Cellar:/usr/local/share/npm/bin:~/Documents/code/active/adt-bundle-mac-x86_64-20130729/sdk/platform-tools:$PATH
+export HISTSIZE=1000 # expand history
+export HISTFILESIZE=1000 # expand history
+shopt -s histappend # append to not overwrite history
+# save and reload history after each command
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+export DJANGO_CONFIGURATION=Peter
 
 # default actions
 
-cd $DIR_CODE; ls
-
-
+work
 
 # load RVM and completion
 

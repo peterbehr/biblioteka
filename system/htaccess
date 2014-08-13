@@ -1,0 +1,44 @@
+# fundamentals: http://httpd.apache.org/docs/2.2/howto/htaccess.html
+
+# force newest version of IE
+<IfModule mod_setenvif.c>
+	<IfModule mod_headers.c>
+		BrowserMatch MSIE ie
+		Header set X-UA-Compatible "IE=Edge,chrome=1" env=ie
+	</IfModule>
+</IfModule>
+
+# URL manipulation
+RewriteEngine On
+# remove prepended www from URLs
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+# no image hotlinking
+# RewriteCond %{HTTP_REFERER} !^$
+# RewriteCond %{HTTP_REFERER} !^http://(www\.)?[my domain]/.*$ [NC]
+# RewriteRule \.(jpg|gif|png)$ http://[my domain]/[alternate image URL] [R,L]
+
+# custom error document
+# ErrorDocument 404 /404.html
+
+# prevent or allow directory listing
+# Options -MultiViews
+Options -Indexes
+
+# default character encodings
+AddDefaultCharset utf-8
+AddCharset utf-8 .html .css .js .xml .json .rss
+
+# don't let anyone see .htaccess
+<Files .htaccess>
+	Order allow,deny
+	Deny from all
+</Files>
+
+# password protection for the directory containing this .htaccess
+# manage password files with $ htpasswd
+# AuthName "Restricted"
+# AuthType Basic
+# AuthUserFile [password file]
+# AuthGroupFile /dev/null
+# Require valid-user

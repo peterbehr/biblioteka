@@ -7,6 +7,8 @@
 	count = !git shortlog -n $@ | grep \"):\" | sed \"s|:||\"
 	modules = submodule foreach git pull origin master
 	amend = commit --amend
+	# ahead = log origin/master..HEAD
+	ahead = log --branches --not --remotes
 	st = status
 	ci = commit
 	cm = commit
@@ -17,5 +19,8 @@
 	ps = push origin master
 	al = add .
 	sm = submodule foreach
+	fork = !bash -c 'diff --old-line-format= --new-line-format= <(git rev-list --first-parent "${1:-master}") <(git rev-list --first-parent "${2:-HEAD}") | head -1' -
 [color]
 	diff = auto
+[push]
+	default = simple
