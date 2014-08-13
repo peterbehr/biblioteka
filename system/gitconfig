@@ -9,6 +9,8 @@
 	amend = commit --amend
 	# ahead = log origin/master..HEAD
 	ahead = log --branches --not --remotes
+	fork = !bash -c 'diff --old-line-format= --new-line-format= <(git rev-list --first-parent "${1:-master}") <(git rev-list --first-parent "${2:-HEAD}") | head -1' -
+	top = diff HEAD^ HEAD
 	st = status
 	ci = commit
 	cm = commit
@@ -19,7 +21,6 @@
 	ps = push origin master
 	al = add .
 	sm = submodule foreach
-	fork = !bash -c 'diff --old-line-format= --new-line-format= <(git rev-list --first-parent "${1:-master}") <(git rev-list --first-parent "${2:-HEAD}") | head -1' -
 [color]
 	diff = auto
 [push]
