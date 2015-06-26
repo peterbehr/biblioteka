@@ -16,9 +16,7 @@ CYAN="\[\033[0;36m\]"
 
 # includes
 
-if [ -e ~/.bashrc_extra ]; then
-    . ~/.bashrc_extra
-fi
+[[ -e ~/.bashrc_extra ]] && . "$HOME/.bashrc_extra"
 
 # command alii (if vars aren't defined then cd is called without args
 
@@ -51,7 +49,7 @@ function get_rvm_prompt() { # via Tammer Saleh
 
 # exports
 
-export PS1="$YELLOW\h:\w$GREEN\$(get_git_branch)$CYAN\$(get_rvm_prompt)$YELLOW \\$ $CLEAR"
+export PS1="$YELLOW\u@\h:\w$GREEN\$(get_git_branch)$MAGENTA\$(get_rvm_prompt)$YELLOW \\$ $CLEAR"
 export CLICOLOR=1
 export LSCOLORS=gxfxcxdxcxeggdcbcgacad
 export TERM=xterm-color
@@ -63,6 +61,7 @@ shopt -s histappend # append to not overwrite history
 # save and reload history after each command
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 export DJANGO_CONFIGURATION=Peter
+export HISTTIMEFORMAT="%d/%m/%y %T "
 
 # default actions
 
@@ -73,4 +72,8 @@ work
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 [[ -r "$rvm_path/scripts/completion" ]] && . "$rvm_path/scripts/completion"
 
-PATH=/usr/local/bin:$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# load git completion
+
+[[ -f ~/.gitcompletion.sh ]] && . "$HOME/.gitcompletion.sh"
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

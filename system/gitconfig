@@ -2,6 +2,12 @@
 	name = Peter Behr
 	email = code@peterbehr.net
 [alias]
+	graphrel = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+	graphabs = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+	# show a graph style log, choose from the options above below
+	graph = !git graphrel
+	fap = fetch --all --prune
+	bav = branch -av
 	purge = !git rm $(git ls-files --deleted)
 	ignored = ls-files -o -i --exclude-standard
 	count = !git shortlog -n $@ | grep \"):\" | sed \"s|:||\"
@@ -9,6 +15,7 @@
 	amend = commit --amend
 	# ahead = log origin/master..HEAD
 	ahead = log --branches --not --remotes
+	# get oldest common ancestor between the current branch and master
 	fork = !bash -c 'diff --old-line-format= --new-line-format= <(git rev-list --first-parent "${1:-master}") <(git rev-list --first-parent "${2:-HEAD}") | head -1' -
 	top = diff HEAD^ HEAD
 	st = status
